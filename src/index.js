@@ -3,11 +3,42 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Appnav from './Appnav';
+import Home from './Home';
+import Categories from './Categories';
+import Allitems from './Allitems'
+
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+  <BrowserRouter>
+    <Routes>
+      <Route>
+      
+       
+        <Route path='/'element={<Appnav/>}>
+        <Route index element={<Home/>}/>
+        <Route path='/home'element={<Home/>}/>
+        <Route path='/category/:strCategory'element={<Categories/>}/>
+        <Route path='/home' element={<Home/>}/>
+        <Route path='/allitems' element={<Allitems/>}/>    
+        
+        </Route>
+
+      </Route>
+    </Routes>
+
+    </BrowserRouter> 
+
+   
+
+  
   </React.StrictMode>
 );
 

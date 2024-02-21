@@ -1,0 +1,112 @@
+
+.myContainer {
+    width: 100%;
+  
+}
+
+.myImage {
+   
+        max-height:40vh; 
+    /*0vh; Set a maximum height of 80% of the viewport height */
+        width: 100%; /* Ensure the width adjusts proportionally to the height */
+        display: block; /* Ensure the image is displayed as a block element */
+    }
+
+
+/* .button{
+    position: absolute;
+    top: 65%;
+    left: 45%;
+    text-align: center;
+    height: 6%;
+    width: 10%;
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    
+} */
+
+.img1{
+    background-image: url('img.jpg');
+    height: 650px;
+    width: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.text{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    align-items: center;
+    color: white;
+    flex-wrap: wrap;
+}
+
+
+button:hover{
+    background-color: rgb(21, 88, 13);
+}
+.alignrow{
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    gap: 20px;
+   
+    
+}
+.box{
+    color: white;
+    margin-top: 10px;
+    height: 310px;
+    width: 320px;
+    border: 1px solid;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    border: none;
+    text-transform: capitalize;
+    background-color: rgb(108, 87, 60);
+    
+}
+.box:hover{
+ 
+    transform: scale(1.05);
+}
+  .input2{
+    height:'40px';
+    width:'700px';
+    border-radius:'18px';
+    border-color:'light'
+  }
+  .text2{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+  }
+  .box2:hover{
+ 
+    transform: scale(1.05);
+}
+.box2{
+    color: white;
+    height: 340px;
+    width: 320px;
+    border: 1px solid;
+    border: none;
+    background-color: rgb(108, 87, 60);
+    border-radius: 20px;
+}
+.box3{
+    color: white;
+    height: 370px;
+    width: 320px;
+    border: 1px solid;
+    border: none;
+    background-color: rgb(108, 87, 60);
+    border-radius: 20px;
+}

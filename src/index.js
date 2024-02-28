@@ -7,42 +7,50 @@ import Appnav from './Appnav';
 import Home from './Home';
 import Categories from './Categories';
 import Allitems from './Allitems'
-
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Country from './Country';
+import Details from './Details';
+import Ingredients from './Ingredients';
+import { Provider } from 'react-redux';
+import { Store } from './redux/Store';
+import Favourite from './Favourite';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={Store}>
   <BrowserRouter>
+  
     <Routes>
       <Route>
-      
        
         <Route path='/'element={<Appnav/>}>
         <Route index element={<Home/>}/>
-        <Route path='/home'element={<Home/>}/>
-        <Route path='/category/:strCategory'element={<Categories/>}/>
         <Route path='/home' element={<Home/>}/>
-        <Route path='/allitems' element={<Allitems/>}/>    
+        <Route path='/category/:strCategory' element={<Categories/>}/>
+        <Route path='/ingredient/:Mealid' element={<Ingredients/>}/>
+        <Route path='/allitems'element={<Allitems/>}/>
+        <Route path='/favourite'element={<Favourite/>}/>            
+        <Route path='/country'element={<Country/>}/>  
+        <Route path='/detail/:strArea' element={<Details/>}/>  
         
         </Route>
 
       </Route>
     </Routes>
+    
+
 
     </BrowserRouter> 
 
-   
+    </Provider>
 
   
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+
+

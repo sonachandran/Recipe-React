@@ -2,6 +2,7 @@
 import React, { useState ,useEffect} from 'react';
 import axios from 'axios';
 import './Food.css'
+import { Link } from 'react-router-dom';
 
 const Allitems = () => {
   const [title, setTitle] = useState('');
@@ -50,8 +51,8 @@ const Allitems = () => {
         {data.map((item) => (
          
           < div className='box2'>
-            <img  style={{height:'260px',width:"320px",borderTopRightRadius:'20px',borderTopLeftRadius:'20px'}} src={item.strMealThumb} alt={item.strMeal} />
-            <h3 style={{display:"flex",justifyContent:'center'}}>{item.strMeal}</h3>
+       <Link to={`/ingredient/${item.idMeal}`}> <img  style={{height:'260px',width:"320px",borderTopRightRadius:'20px',borderTopLeftRadius:'20px'}} src={item.strMealThumb} alt={item.strMeal} /></Link> 
+           <h4><i style={{display:"flex",justifyContent:'center',marginTop:'20px'}}> <b> {item.strMeal}</b></i></h4> 
             
             </div>
         ))}

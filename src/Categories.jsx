@@ -1,7 +1,8 @@
 
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+
 
 const Categories = () => {
   const { strCategory } = useParams();
@@ -25,15 +26,18 @@ const Categories = () => {
   }, []); 
 console.log('data',data);
   return (
+    
     <>
-      <div className='alignrow'style={{marginTop:'100px'}}>
+    <h1 style={{display:'flex',justifyContent:'center',textTransform:'capitalize',marginTop:'60px'}} className='font2'>  {strCategory}</h1>
+      <div className='alignrow'style={{marginTop:'30px'}}>
       {data.map((meal) => (
-        <div className='box3'style={{marginTop:"80px"}}>
+        <div className='box3'style={{marginTop:"60px"}}>
 
           <img style={{height:'260px',width:"320px",borderTopRightRadius:'20px',borderTopLeftRadius:'20px'}}   src={meal.strMealThumb} alt={meal.strMeal} />
-          <h3 style={{display:'flex',justifyContent:'center'}}>{meal.strMeal}</h3>
-          <button style={{display:'flex',justifyContent:'center',alignItems:'center',alignContent:'center'}}>ViewDetails</button>
-         
+          <h5><i style={{display:'flex',justifyContent:'center',padding:'5px'}}> <b> {meal.strMeal}</b> </i></h5>  
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center',alignContent:'center'}} >
+               <Link to={`/ingredient/${meal.idMeal}`}><button className='btn2' ><i>ViewDetails</i></button></Link> 
+          </div>
         </div>
       
         
